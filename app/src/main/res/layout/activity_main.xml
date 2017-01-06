@@ -8,10 +8,47 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.garfield_chou.whatstheweather.MainActivity">
+    tools:context="com.garfield_chou.whatstheweather.MainActivity"
+    android:background="@drawable/background">
 
     <TextView
+        android:text="Enter a city..."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:id="@+id/textView"
+        android:textColor="#ffffff"
+        android:textSize="40sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/cityEditText" />
+
+    <Button
+        android:text="What's the weather?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:textSize="16sp"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/cityEditText"
+        android:layout_centerHorizontal="true"
+        android:onClick="queryWeather" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:id="@+id/weatherInfoTextView"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:layout_below="@+id/button" />
+
 </RelativeLayout>
