@@ -1,11 +1,9 @@
 package com.garfield_chou.whatstheweather;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,14 +16,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-
-    EditText cityName;
-
-    public void findWeather(View view) {
-
-        Log.i("cityname", cityName.getText().toString());
-
-    }
 
     public class DownloadJSONTask extends AsyncTask<String, Void, String> {
 
@@ -89,7 +79,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        cityName = (EditText) findViewById(R.id.cityName);
     }
 }
