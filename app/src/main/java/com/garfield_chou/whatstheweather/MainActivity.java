@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -22,7 +23,11 @@ public class MainActivity extends AppCompatActivity {
     public void queryWeather (View view) {
 
         DownloadJSONTask task = new DownloadJSONTask();
-        task.execute("http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=9c436ed4e80da1d03390836a27581377");
+        EditText cityEditText = (EditText) findViewById(R.id.cityEditText);
+
+        task.execute("http://api.openweathermap.org/data/2.5/weather?q=" 
+            + cityEditText.getText().toString()
+            + "&appid=9c436ed4e80da1d03390836a27581377");
 
     }
 
